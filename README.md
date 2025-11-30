@@ -1,74 +1,65 @@
-Employee Attendance System (Local Setup Guide)
+🚀 How to Setup & Run This Project (Locally)
 
-A simple Employee Attendance Management System built using:
+Follow these steps to run the Employee Attendance System on your own computer.
 
-React (Frontend)
+✅ 1. Install Requirements
 
-Node.js + Express (Backend)
+Make sure you have installed:
 
-PostgreSQL (Database)
+Node.js
 
-Sequelize ORM
+npm
 
-This guide explains how to run the project locally on your system.
+PostgreSQL
 
-🏗 Project Structure
-employee-attendance-system/
-│
-├── backend/      # Node.js + Express API
-└── frontend/     # React UI
+Git
 
-⚙️ Requirements
-
-Before running, install:
-
-Node.js (v16 or later)
-
-PostgreSQL (v13+)
-
-npm (comes with Node.js)
-
-🛠️ STEP 1 — Clone Repository
+🛠 2. Clone the Repository
 git clone https://github.com/vinaykumar1757/employee-attendance-system.git
 cd employee-attendance-system
 
-🗄️ STEP 2 — Setup PostgreSQL (Local)
+🗄 3. Setup PostgreSQL Database
 
-Open PostgreSQL terminal:
+Open PostgreSQL:
 
 psql -U postgres
 
 
-Create database:
+Create the database:
 
 CREATE DATABASE attendance;
 
-🖥️ STEP 3 — Backend Setup
 
-Open terminal:
+Exit psql:
+
+\q
+
+⚙️ 4. Setup Backend
+
+Go to the backend folder:
 
 cd backend
 npm install
 
 
-Create .env file inside backend/:
+Create .env in backend:
 
 DATABASE_URL=postgres://postgres:<YOUR_PASSWORD>@localhost:5433/attendance
 JWT_SECRET=supersecret
 
 
-⚠️ Replace <YOUR_PASSWORD> with your PostgreSQL password.
+(Replace <YOUR_PASSWORD> with your PostgreSQL password)
 
-Run backend:
+Start backend:
 
 npm run dev
 
 
-Backend will start at:
+Backend runs at:
 
 http://localhost:5000
 
-💻 STEP 4 — Frontend Setup
+💻 5. Setup Frontend
 
 Open a new terminal:
 
@@ -76,93 +67,42 @@ cd frontend
 npm install
 
 
-Create .env file inside frontend/:
+Create .env in frontend:
 
 REACT_APP_API_URL=http://localhost:5000
 
 
-Run frontend:
+Start frontend:
 
 npm start
 
 
-Frontend will start at:
+Frontend runs at:
 
 http://localhost:3000
 
-🎯 Features
-Employee
+🎯 6. Use the Application
 
-Login / Register
+Open frontend: http://localhost:3000
 
-Check-In
+Register a new user
 
-Check-Out
+Login as Employee or Manager
 
-View Attendance History
+Use Check-In / Check-Out and Attendance Dashboard
 
-Manager
-
-View Team Attendance
-
-View Employee Information
-
-🧪 API Endpoints
-
-Auth
-
-POST /api/auth/register
-
-POST /api/auth/login
-
-Attendance
-
-POST /api/attendance/checkin
-
-POST /api/attendance/checkout
-
-GET /api/attendance/my-history
-
-GET /api/attendance/all (Manager only)
-
-📦 Tech Used
+📡 Tech Stack
 
 React
 
 Material UI
 
-Zustand (state management)
+Zustand
 
-Axios
-
-Node.js
-
-Express
-
-JWT
+Node.js + Express
 
 PostgreSQL
 
 Sequelize ORM
 
-✔ How to Use
-
-Start backend → http://localhost:5000
-
-Start frontend → http://localhost:3000
-
-Register a new user
-
-Login
-
-Use the employee or manager dashboard
-
-📌 Notes
-
-Make sure PostgreSQL is running before starting backend
-
-Change DB password in .env if required
-
-attendance database will auto-generate tables on backend start
-
-🎉 You're Ready to Run the App Locally!
+JWT Authentication
